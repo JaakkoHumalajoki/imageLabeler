@@ -26,6 +26,8 @@ html {
     margin-bottom: 80px;
     background-color: rgba(0,0,0,0.8);
     border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
 }
 
 h1 {
