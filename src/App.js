@@ -5,6 +5,7 @@ import Background from './components/Background/Background';
 import Footer from './components/Footer/Footer';
 import Input from './components/Input/Input';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
+import LabelList from './components/LabelList/LabelList';
 
 const pexelsAPI = process.env.REACT_APP_PEXELS_API_KEY;
 const pexelsClient = createClient(pexelsAPI);
@@ -20,7 +21,7 @@ class App extends Component {
       background_url: "",
       input: "",
       image_url: "",
-      concepts: [],
+      labels: [],
     };
   }
 
@@ -40,7 +41,10 @@ class App extends Component {
   }
 
   handleButtonClick = () => {
-    this.setState({ image_url: this.state.input });
+    this.setState({ 
+      image_url: this.state.input,
+      labels: ["Loading..."],
+    });
 
     // Asking Clarifai API for image labels
 
@@ -72,15 +76,14 @@ class App extends Component {
     fetch("https://api.clarifai.com/v2/models/general-image-recognition/outputs", requestOptions)
         .then(response => response.json())
         .then(result => {
-          const concepts = result.outputs[0].data.concepts.map(concept => concept.name);
-          this.setState({ concepts: concepts });
-          console.log(concepts);
+          const labels = result.outputs[0].data.concepts.map(concept => concept.name);
+          this.setState({ labels: labels });
         })
         .catch(error => console.log('error', error));
   }
 
   render() {
-    const { background_url, image_url } = this.state;
+    const { background_url, image_url, labels } = this.state;
     return (
       <div className="App">
         <Background url={background_url} />
@@ -92,6 +95,7 @@ class App extends Component {
             onButtonClick={this.handleButtonClick}
           />
           <ImageDisplay image_url={image_url} />
+          <LabelList labels={labels} />
         </div>
         <Footer />
       </div>
