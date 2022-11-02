@@ -1,17 +1,17 @@
 .labels {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 500px;
-    margin-top: 30px;
-    gap: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 500px;
+  margin-top: 30px;
+  gap: 20px;
 }
 
 .labels li {
-    color: whitesmoke;
-    background-color: rgb(6, 66, 66);
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 100px;
+  color: whitesmoke;
+  background-color: rgb(6, 66, 66);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 100px;
 }
