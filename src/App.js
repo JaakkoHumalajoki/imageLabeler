@@ -19,6 +19,8 @@ class App extends Component {
     super();
     this.state = {
       background_url: "",
+      photographer: "",
+      photographer_url: "",
       input: "",
       image_url: "",
       labels: [],
@@ -28,8 +30,16 @@ class App extends Component {
   componentDidMount() {
     pexelsClient.photos.curated({ per_page: 1 })
       .then(photos => {
-        const photo_url = photos.photos[0].src.landscape;
-        this.setState({ background_url: photo_url, input: photo_url});
+        const background_url = photos.photos[0].src.landscape;
+        const original_url = photos.photos[0].src.original;
+        const photographer = photos.photos[0].photographer;
+        const photographer_url = photos.photos[0].photographer_url;
+        this.setState({ 
+          background_url: background_url,
+          input: original_url,
+          photographer: photographer,
+          photographer_url: photographer_url
+        });
       })
       .catch(error => {
         console.log(error);
@@ -83,7 +93,7 @@ class App extends Component {
   }
 
   render() {
-    const { background_url, image_url, labels } = this.state;
+    const { background_url, image_url, labels, photographer, photographer_url } = this.state;
     return (
       <div className="App">
         <Background url={background_url} />
@@ -97,7 +107,7 @@ class App extends Component {
           <ImageDisplay image_url={image_url} />
           <LabelList labels={labels} />
         </div>
-        <Footer />
+        <Footer photographer={photographer} photographer_url={photographer_url} />
       </div>
     );
   }
