@@ -93,14 +93,14 @@ class App extends Component {
   }
 
   render() {
-    const { background_url, image_url, labels, photographer, photographer_url } = this.state;
+    const { background_url, image_url, input, labels, photographer, photographer_url } = this.state;
     return (
       <div className="App">
         <Background url={background_url} />
         <div className="content">
           <h1>Image Labeler</h1>
           <Input 
-            defaultValue={background_url} 
+            defaultValue={input} 
             onInputChange={this.handleInputChange}
             onButtonClick={this.handleButtonClick}
           />
