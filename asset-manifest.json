@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/imageLabeler/static/css/main.ca6215bd.css",
+    "main.js": "/imageLabeler/static/js/main.b773fdb9.js",
+    "index.html": "/imageLabeler/index.html",
+    "main.ca6215bd.css.map": "/imageLabeler/static/css/main.ca6215bd.css.map",
+    "main.b773fdb9.js.map": "/imageLabeler/static/js/main.b773fdb9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca6215bd.css",
+    "static/js/main.b773fdb9.js"
+  ]
+}
