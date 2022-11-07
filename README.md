@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Image Labeler App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React app to practice state management and handling asynchronous API calls. The image labeler app uses Clarifai AI image recognition API to label any image URL. The app background image is Pexels curated wallpaper from their API which changes daily.
 
-## Available Scripts
+[Link to the App on GitHub Pages](https://jaakkohumalajoki.github.io/imageLabeler/).
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+To install the App locally, run 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+and rename file .env.example to .env.local. You will need to fill the file with your own API keys from both Pexels and Clarifai, but they can be obtained for free. 
 
-### `npm test`
+### Pexels
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+More info on getting Pexels API key can be found [here](https://www.pexels.com/api/).
 
-### `npm run build`
+### Clarifai
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I'm using a legacy method of accessing Clarifai API, but anything else would've been far too complicated for this simple app. You can get USER_ID by making an account at https://www.clarifai.com/, you can then make a dummy app and get its APP_ID, and finally going into account -> security -> personal access token is your API_KEY.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Learning outcome
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+While making the app from scratch, I learned valuable lessons about CSS layouting, React state management, handling asynchronous requests and problem-solving a complicated API system. The original plan was to also add a backend server to this app, but I decided to save that for a future project.
